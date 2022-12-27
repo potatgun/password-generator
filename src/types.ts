@@ -5,8 +5,14 @@ export type RandomNumbers = {
 }
 
 export type UserInput = {
+  useLowercase: boolean,
   useUppercase: boolean,
   useSymbols: boolean,
   useNumbers: boolean,
   passwordLength: number
+}
+
+export type Password = {
+  password: string,
+  strength: number
 }
