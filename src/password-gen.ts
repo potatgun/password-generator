@@ -1,5 +1,4 @@
 import { RandomNumbers, UserInput } from "./types"
-import { Request, Response } from "express"
 import { Rng } from "./rng";
 
 
@@ -27,16 +26,16 @@ function createDict(userInput: UserInput): string {
 
   let dictArray = ["abcdefghijklmnopqrstuvwxyz"]
 
-  // make set of avaliable characters
+  // make a set of avaliable characters
   pushIfSelected(dictArray, characterDictionary.uppercaseAbs, userInput.useUppercase)
   pushIfSelected(dictArray, characterDictionary.numbers, userInput.useNumbers)
   pushIfSelected(dictArray, characterDictionary.symbols, userInput.useSymbols)
 
   return dictArray.join("")
-
 }
 
-function createPassword(userInput: UserInput, dict: string): string {
+// how to name this one?
+function createPasswordInner(userInput: UserInput, dict: string): string {
   const rng: RandomNumbers = Rng()
   let password = ""
 
@@ -52,15 +51,13 @@ function createPassword(userInput: UserInput, dict: string): string {
   return password
 }
 
-export function apiPassword(req: Request<any>, res: Response<any>) {
-  // TODO: validate user input
-  const userInput: UserInput = req.body 
-
+// how to name this one?
+export function createPassword(userInput: UserInput) {
   const dict = createDict(userInput)
-  const password = createPassword(userInput, dict)
+  const password = createPasswordInner(userInput, dict)
   const strength = strengthChecker(userInput.passwordLength, dict.length)
 
-  res.status(200).json({
+  return ({
     password: password,
     strength: strength
   })
