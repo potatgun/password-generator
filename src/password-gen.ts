@@ -3,12 +3,10 @@ import { Rng } from "./rng";
 
 
 
-// got the thing from here
-// https://medium.com/asecuritysite-when-bob-met-alice/password-entropy-826b3be47261
 function strengthChecker(length: number, dictSize: number): number {
-                                // log10(2) is about 0.30102
-                                // and 1/0.30102 is 3.32
-  return length * Math.log10(dictSize) * 3.32
+  // formula is from here 
+  // https://en.wikipedia.org/wiki/Password_strength#Random_passwords
+  return length * Math.log2(dictSize)
 }
 
 function pushIfSelected(input: string[], toPush: string, isSelected: boolean) {
