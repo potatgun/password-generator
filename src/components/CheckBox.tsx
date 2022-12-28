@@ -1,4 +1,6 @@
-import { ChangeEventHandler } from "react"
+import { ChangeEventHandler, useEffect } from "react"
+
+import "../styles/CheckBox.scss"
 
 type Props = {
   name: string,
@@ -8,7 +10,7 @@ type Props = {
 
 function CheckBox({ name, onChange, checked }: Props) {
   return(
-    <label htmlFor={"settings__" + name}>
+    <label htmlFor={"settings__" + name} className="settings__checkbox-label">
       <input 
         onChange={onChange} 
         checked={checked}
@@ -16,7 +18,7 @@ function CheckBox({ name, onChange, checked }: Props) {
         id={"settings__" + name}
         name={name}
       />
-      <p>{name}</p>
+      <h4>{name}</h4>
     </label>
   )
 }

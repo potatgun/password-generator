@@ -1,0 +1,39 @@
+.StrengthMeter {
+  width: 90%;
+  height: 1rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  background-color: red;
+
+  grid-column: 2 span;
+}
+
+
+.blue {
+  background-color: lightblue;
+}
+
+.green {
+  background-color: lightgreen; 
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.red {
+  background-color: red;
+}
+
+.dark-red {
+  background-color: darkred;
+}
+
+.dark-purple {
+  background-color: darkmagenta;
+  opacity: 0.5;
+}

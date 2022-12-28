@@ -1,0 +1,68 @@
+.App {
+  background-color: #242424;
+  max-width: min(20rem, 100%);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 1fr 4fr 1fr;
+  
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+
+  .password-output__input {
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 100%;
+
+    input {
+      width: 100%;
+      // margin: 0 auto;
+      //padding: 0.5rem 1rem;
+      border: none;
+      background-color: transparent;
+      border-bottom: 0.125rem solid orange;
+
+      &:focus {
+        outline: none;
+        background-color: #111;
+      }
+    }
+  }
+
+  .password-output__refresh-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    *, & { 
+      border: none;
+      background-color: transparent;
+    }
+    
+    button {
+      display: flex;
+      align-items: center;
+
+      border-bottom: 0.125rem solid orange;
+      height: 2rem;
+
+      svg {
+        height: 70%;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: #111;
+      }
+    }
+  }
+
+  .settings__checkboxes {
+    width: 100%;
+  }
+
+  * {
+    color: white;
+  }
+} 

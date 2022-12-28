@@ -1,3 +1,5 @@
+import "../styles/StrengthMeter.scss"
+
 type Props = {
   value: number
 }
@@ -9,10 +11,10 @@ function StrengthMeter({ value }: Props) {
   strengthColor = value > 60 ? "orange" : strengthColor
   strengthColor = value > 80 ? "red" : strengthColor
   strengthColor = value > 100 ? "dark-red" : strengthColor
-  strengthColor = value > 120 ? "black" : strengthColor
+  strengthColor = value > 120 ? "dark-purple" : strengthColor
 
   return( 
-    <div className={ "StrengthMeter" + strengthColor }> 
+    <div className={ "StrengthMeter " + strengthColor }> 
     </div>
   )
 }

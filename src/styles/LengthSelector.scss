@@ -1,0 +1,38 @@
+.settings__length-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  div {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h4 {
+    line-height: 70%;
+    font-weight: 500;
+    margin: 1rem 0;
+  }
+
+  input {
+    height: 80%;
+
+    // dev tools consle said this thing is going to be removed soon
+    // so i'm transform: rotateting this instead
+    // appearance: slider-vertical;
+    transform: rotate(-90deg);
+    // background-color: #333;
+    // border-radius: 1.5rem;
+    // opacity: 0.9;
+  }
+
+  input:focus {
+    background-color: #111;
+    opacity: 1;
+  }
+}

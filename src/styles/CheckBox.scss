@@ -1,0 +1,17 @@
+.settings__checkbox-label {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 0.075rem solid #242424;
+ 
+  h4 {
+    line-height: 70%;
+    font-weight: 500;
+  }
+
+  input {
+    margin: 0;
+  }
+
+}
+
