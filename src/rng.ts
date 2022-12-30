@@ -12,7 +12,7 @@ export function Rng(length: number) {
   }
 
   const range = (min: number, max: number): number => {
-    const result = (cryptos[index] % (max - min)) + min
+    const result = (cryptos[index]! % (max - min)) + min
     index += 1
 
     if (index === length) {
