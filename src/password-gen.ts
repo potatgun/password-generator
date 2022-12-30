@@ -34,9 +34,8 @@ function createDict(userInput: UserInput): string {
   return dictArray.join("")
 }
 
-// how to name this one?
 function createPasswordInner(userInput: UserInput, dict: string): string {
-  const rng: RandomNumbers = Rng()
+  const rng: RandomNumbers = Rng(userInput.passwordLength)
   let password = ""
 
   for (let ii = 0; ii < userInput.passwordLength; ii++) {

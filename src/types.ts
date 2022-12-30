@@ -1,6 +1,4 @@
 export type RandomNumbers = {
-  seed: number,
-  xorShift: () => number
   range: (min: number, max: number) => number
 }
 

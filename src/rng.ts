@@ -1,26 +1,29 @@
-export function Rng() {
-  let seed = Date.now()
+export function Rng(length: number) {
+  let cryptos = new Uint32Array(10)
 
-  const xorShift = (): number => {
-    seed ^= seed << 13
-    seed ^= seed >> 16
-    seed ^= seed << 12
+  crypto.getRandomValues(cryptos) 
 
-    if (seed < 0) {
-      seed = -seed
+  let index = 0 
+
+  const nullArray = (array: Uint32Array) => {
+    for (let ii = 0; ii < array.length; ii++) {
+      array[ii] = 0
     }
-    return seed 
   }
 
   const range = (min: number, max: number): number => {
-    xorShift()
-    // TODO: test this, i'm not sure how this would work on 0-1 range 
-    return (seed % (max - min)) + min
+    const result = (cryptos[index] % (max - min)) + min
+    index += 1
+
+    if (index === length) {
+      index = 0 
+      crypto.getRandomValues(cryptos)
+    }
+
+    return result
   }
 
   return {
-    seed: seed,
-    xorShift: xorShift,
-    range: range,
+    range
   }
 }
