@@ -1,4 +1,4 @@
-import { MouseEvent, ChangeEvent, useCallback, useState, useRef, SyntheticEvent, useEffect } from 'react'
+import { MouseEvent, ChangeEvent, useCallback, useState, useRef, SyntheticEvent, useEffect, memo } from 'react'
 import '../styles/App.scss'
 import CheckBox from './CheckBox'
 import { Password, UserInput } from "../types"
@@ -103,4 +103,4 @@ function App() {
   )
 }
 
-export default App
+export default memo(App)
